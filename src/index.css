@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #281327;
+  --color-plum: #623661;
+  --color-wine: #c077bf;
+  --color-berry: #f185ad;
+  --color-rosewood: #c077bf;
+  --color-blush: #fbe6ef;
+  --color-parchment: #fcf6fa;
+  --color-cream: #ffffff;
+  --color-gold: #f185ad;
+  --color-sage: #a285a1;
+  --font-sans: "Manrope", sans-serif;
+  --font-display: "Playfair Display", serif;
+  --font-mono: "DM Mono", monospace;
+}
+
+:root {
+  font-family: "Manrope", sans-serif;
+  color: #281327;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #ffffff;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  display: block;
+}
+
+::selection {
+  color: #ffffff;
+  background: #c077bf;
+}
+
+.page-shell {
+  width: min(100% - 2rem, 1280px);
+  margin-inline: auto;
+}
+
+.display-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.96;
+}
+
+.eyebrow {
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.image-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand-logo-crop {
+  position: relative;
+  display: block;
+  width: 5.9rem;
+  height: 3.2rem;
+  flex: 0 0 auto;
+  overflow: hidden;
+  background: #fff;
+}
+
+.brand-logo-crop img {
+  position: absolute;
+  top: -77px;
+  left: -42px;
+  width: 160px;
+  max-width: none;
+}
+
+.noise {
+  position: relative;
+}
+
+.noise::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  pointer-events: none;
+  opacity: 0.13;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+}
+
+.marquee-track {
+  animation: marquee 25s linear infinite;
+}
+
+.legal-copy h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+  letter-spacing: -0.03em;
+  color: #281327;
+}
+
+.legal-copy h3 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.65rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #623661;
+}
+
+.legal-copy p,
+.legal-copy li {
+  color: #705b70;
+  line-height: 1.85;
+}
+
+.legal-copy p {
+  margin-bottom: 1rem;
+}
+
+.legal-copy ul {
+  margin: 1rem 0;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.legal-copy {
+  overflow-wrap: anywhere;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (min-width: 768px) {
+  .page-shell {
+    width: min(100% - 4rem, 1280px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
