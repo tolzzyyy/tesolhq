@@ -115,7 +115,7 @@ export default function HomePage() {
         <div className="page-shell grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
           <div className="relative z-10 lg:pb-10">
             <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16 }} className="mb-5 font-mono text-xs font-medium uppercase tracking-[0.18em] text-ink/55">Events, built differently.</motion.p>
-            <motion.h1 initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.22, duration: 0.75, ease: [0.22, 1, 0.36, 1] }} className="display-title text-[clamp(3rem,6.2vw,5.8rem)] text-ink">
+            <motion.h1 initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.22, duration: 0.75, ease: [0.22, 1, 0.36, 1] }} className="display-title text-[clamp(2.15rem,9.5vw,2.5rem)] text-ink sm:text-[clamp(3rem,6.2vw,5.8rem)]">
               Building Digital Solutions For <span className="block italic text-berry sm:inline">Every Event.</span>
             </motion.h1>
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.48, duration: 0.6 }} className="mt-7 max-w-xl text-sm leading-7 text-ink/65 sm:text-base">
@@ -152,7 +152,7 @@ export default function HomePage() {
         <div className="page-shell grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
           <motion.div {...reveal}>
             <p className="eyebrow text-berry">The big idea</p>
-            <h2 className="display-title mt-6 text-[clamp(1.9rem,8.5vw,2.25rem)] text-ink sm:text-5xl">Behind every great event is <span className="italic text-wine">a lot of <span className="block sm:inline">moving parts.</span></span></h2>
+            <h2 className="display-title mt-6 text-[clamp(1.125rem,5.6vw,1.5rem)] text-ink sm:text-5xl"><span className="whitespace-nowrap sm:whitespace-normal">Behind every great event is <span className="italic text-wine">a lot of</span></span>{' '}<span className="block italic text-wine sm:inline">moving parts.</span></h2>
           </motion.div>
 
           <motion.div {...reveal}>
@@ -171,7 +171,7 @@ export default function HomePage() {
         <div className="page-shell">
           <motion.div {...reveal} className="grid gap-7 border-b border-wine/25 pb-12 lg:grid-cols-[0.65fr_1.35fr] lg:items-end">
             <p className="eyebrow text-berry">What TESOL builds</p>
-            <h2 className="display-title text-4xl text-ink sm:text-5xl">One event. <span className="block italic text-wine sm:inline">A lot of possibilities.</span></h2>
+            <h2 className="display-title text-[clamp(1.5rem,6.5vw,1.75rem)] text-ink sm:text-5xl">One event. <span className="block italic text-wine sm:inline">A lot of possibilities.</span></h2>
           </motion.div>
 
           <div className="mt-8 grid gap-5 lg:auto-rows-fr lg:grid-cols-2">
@@ -198,7 +198,7 @@ export default function HomePage() {
       <section className="noise overflow-hidden bg-blush py-24 text-ink lg:py-32">
         <div className="page-shell relative z-10">
           <motion.div {...reveal} className="grid items-center gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
-            <h2 className="display-title text-center text-4xl sm:text-5xl">A calm process for a <span className="italic text-berry">remarkable</span> event.</h2>
+            <h2 className="display-title text-center text-[clamp(1.5rem,6.5vw,1.75rem)] sm:text-5xl">A calm process for a <span className="italic text-berry">remarkable</span> event.</h2>
             <blockquote className="rounded-[2rem] border border-berry/20 bg-white/65 p-8 text-center shadow-[0_24px_70px_rgba(98,54,97,0.08)] sm:p-12">
               <p className="mx-auto max-w-4xl font-display text-2xl leading-[1.35] text-ink sm:text-3xl">“They understood the soul of our celebration, then made every moving part feel entirely effortless.”</p>
               <footer className="mt-8 font-mono text-xs uppercase tracking-[0.16em] text-ink/50">Nnenna &amp; Ade · Ikoyi, Lagos</footer>
@@ -210,7 +210,7 @@ export default function HomePage() {
       <section id="inquire" className="scroll-mt-20 bg-parchment py-24 lg:py-32">
         <div className="page-shell grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
           <motion.div {...reveal}>
-            <h2 className="display-title text-4xl text-ink sm:text-5xl">Tell us about your events</h2>
+            <h2 className="display-title text-xl text-ink sm:text-5xl">Tell us about your events</h2>
           </motion.div>
           <motion.div {...reveal}><InquiryForm /></motion.div>
         </div>
