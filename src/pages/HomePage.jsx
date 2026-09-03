@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, ArrowUpRight, Blocks, Check, Globe2, Heart, QrCode, UsersRound } from 'lucide-react'
 import { Link } from 'react-router-dom'
@@ -93,7 +93,7 @@ function InquiryForm() {
         </label>
         <label className="eyebrow text-ink/60">
           Event or launch date
-          <input className={fieldClass} name="date" placeholder="e.g. December 2026" />
+          <input className={fieldClass} name="date" type="date" />
         </label>
       </div>
       <label className="eyebrow mt-7 block text-ink/60">
@@ -108,6 +108,36 @@ function InquiryForm() {
 }
 
 export default function HomePage() {
+  const heroVideoRef = useRef(null)
+  const [heroVideoPlaying, setHeroVideoPlaying] = useState(false)
+
+  useEffect(() => {
+    const video = heroVideoRef.current
+    if (!video) return undefined
+
+    const startVideo = () => {
+      video.muted = true
+      video.defaultMuted = true
+      video.controls = false
+      video.play().catch(() => {})
+    }
+
+    const restartWhenVisible = () => {
+      if (document.visibilityState === 'visible') startVideo()
+    }
+
+    startVideo()
+    video.addEventListener('loadeddata', startVideo)
+    video.addEventListener('canplay', startVideo)
+    document.addEventListener('visibilitychange', restartWhenVisible)
+
+    return () => {
+      video.removeEventListener('loadeddata', startVideo)
+      video.removeEventListener('canplay', startVideo)
+      document.removeEventListener('visibilitychange', restartWhenVisible)
+    }
+  }, [])
+
   return (
     <PageIntro>
       <section className="relative overflow-hidden bg-white pb-16 pt-28 lg:min-h-[820px] lg:pb-24 lg:pt-36">
@@ -130,7 +160,8 @@ export default function HomePage() {
 
           <motion.div initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }} className="relative lg:ml-4">
             <div className="noise h-[520px] overflow-hidden rounded-[2rem_2rem_8rem_2rem] sm:h-[620px]">
-              <video autoPlay loop muted playsInline preload="metadata" poster="/hero-event-poster.jpg" className="image-cover" aria-label="A beautifully produced event experience">
+              <img src="/hero-event-poster.jpg" alt="" className="image-cover absolute inset-0" aria-hidden="true" />
+              <video ref={heroVideoRef} autoPlay loop muted playsInline preload="auto" controls={false} disablePictureInPicture disableRemotePlayback poster="/hero-event-poster.jpg" onPlaying={() => setHeroVideoPlaying(true)} onPause={() => setHeroVideoPlaying(false)} className={`hero-video image-cover absolute inset-0 transition-opacity duration-300 ${heroVideoPlaying ? 'opacity-100' : 'opacity-0'}`} aria-label="A beautifully produced event experience" tabIndex={-1}>
                 <source src="/hero-event.mp4" type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
