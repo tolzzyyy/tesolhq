@@ -100,7 +100,7 @@ function Header() {
 function Footer() {
   return (
     <footer className="border-t border-wine/15 bg-white text-ink">
-      <div className="page-shell grid gap-12 py-16 md:grid-cols-[1.4fr_0.6fr_0.8fr] md:py-20">
+      <div className="page-shell grid items-start gap-12 py-16 md:grid-cols-[1.2fr_0.8fr_0.8fr] md:py-20">
         <div>
           <BrandMark />
           <p className="mt-6 max-w-sm text-sm leading-7 text-ink/65">
@@ -110,7 +110,7 @@ function Footer() {
 
         <div>
           <p className="eyebrow text-ink/45">Explore</p>
-          <div className="mt-5 flex flex-col gap-3 text-sm text-ink/65">
+          <div className="mt-5 flex flex-col gap-3 text-xs text-ink/65">
             <Link className="transition hover:text-ink" to="/">Home</Link>
             <Link className="transition hover:text-ink" to="/services">Services</Link>
             <Link className="transition hover:text-ink" to="/privacy">Privacy policy</Link>
@@ -119,18 +119,18 @@ function Footer() {
 
         <div>
           <p className="eyebrow text-ink/45">Say hello</p>
-          <a className="mt-5 block font-display text-2xl text-ink transition hover:text-berry" href="mailto:hello@tesolhq.com">
+          <a className="mt-5 block font-display text-lg text-ink transition hover:text-berry" href="mailto:hello@tesolhq.com">
             hello@tesolhq.com
           </a>
-          <p className="mt-3 text-sm text-ink/55">Lagos, Nigeria · Available worldwide</p>
+          <p className="mt-3 text-xs leading-5 text-ink/55">Lagos, Nigeria · Available worldwide</p>
           <div className="mt-6 flex flex-wrap items-center gap-5">
-            <a href="https://www.instagram.com/tesolhq?igsi=dnQyOHlmNXZzbDk5&utm_source=qr" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm text-ink/65 transition hover:text-ink">
-              <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.4" cy="6.7" r=".8" fill="currentColor" stroke="none" /></svg>
+            <a href="https://www.instagram.com/tesolhq?igsi=dnQyOHlmNXZzbDk5&utm_source=qr" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-xs text-ink/65 transition hover:text-ink">
+              <svg viewBox="0 0 24 24" className="size-3.5" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.4" cy="6.7" r=".8" fill="currentColor" stroke="none" /></svg>
               Instagram
             </a>
-            <a href="https://x.com/tesolhq?s=21" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm text-ink/65 transition hover:text-ink">
-              <svg viewBox="0 0 24 24" className="size-4" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z" /></svg>
-              X
+            <a href="https://x.com/tesolhq?s=21" target="_blank" rel="noreferrer" aria-label="TESOL on Twitter" className="inline-flex items-center gap-2 text-xs text-ink/65 transition hover:text-ink">
+              <svg viewBox="0 0 24 24" className="size-3.5" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z" /></svg>
+              Twitter
             </a>
           </div>
         </div>

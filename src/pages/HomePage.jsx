@@ -109,9 +109,7 @@ function InquiryForm() {
 
 export default function HomePage() {
   const heroVideoRef = useRef(null)
-  const [heroVideoSource] = useState(() => window.matchMedia('(max-width: 639px)').matches
-    ? '/hero-event-mobile-v3.mp4'
-    : '/hero-event-desktop-v3.mp4')
+  const [useAnimatedHero] = useState(() => window.matchMedia('(max-width: 639px)').matches)
 
   useEffect(() => {
     const video = heroVideoRef.current
@@ -165,7 +163,11 @@ export default function HomePage() {
 
           <motion.div initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }} className="relative lg:ml-4">
             <div className="noise h-[520px] overflow-hidden rounded-[2rem_2rem_8rem_2rem] sm:h-[620px]">
-              <video ref={heroVideoRef} src={heroVideoSource} autoPlay loop muted playsInline preload="auto" controls={false} disablePictureInPicture disableRemotePlayback poster="/hero-event-poster.jpg" className="hero-video image-cover" aria-label="A beautifully produced event experience" tabIndex={-1} />
+              {useAnimatedHero ? (
+                <img src="/hero-event-mobile-v4.gif" alt="A beautifully produced event experience" className="image-cover" />
+              ) : (
+                <video ref={heroVideoRef} src="/hero-event-desktop-v3.mp4" autoPlay loop muted playsInline preload="auto" controls={false} disablePictureInPicture disableRemotePlayback className="hero-video image-cover" aria-label="A beautifully produced event experience" tabIndex={-1} />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
             </div>
           </motion.div>
