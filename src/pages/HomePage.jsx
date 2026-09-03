@@ -152,7 +152,7 @@ export default function HomePage() {
         <div className="page-shell grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
           <motion.div {...reveal}>
             <p className="eyebrow text-berry">The big idea</p>
-            <h2 className="display-title mt-6 text-4xl leading-[1.12] text-ink sm:text-5xl">Behind every great event is <span className="block italic text-wine sm:inline">a lot of moving parts.</span></h2>
+            <h2 className="display-title mt-6 text-4xl text-ink sm:text-5xl">Behind every great event is <span className="block italic text-wine sm:inline">a lot of moving parts.</span></h2>
           </motion.div>
 
           <motion.div {...reveal}>
@@ -198,9 +198,9 @@ export default function HomePage() {
       <section className="noise overflow-hidden bg-blush py-24 text-ink lg:py-32">
         <div className="page-shell relative z-10">
           <motion.div {...reveal} className="grid items-center gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
-            <h2 className="display-title text-4xl leading-[1.1] sm:text-5xl">A calm process for a <span className="italic text-berry">remarkable</span> event.</h2>
+            <h2 className="display-title text-center text-4xl sm:text-5xl">A calm process for a <span className="italic text-berry">remarkable</span> event.</h2>
             <blockquote className="rounded-[2rem] border border-berry/20 bg-white/65 p-8 text-center shadow-[0_24px_70px_rgba(98,54,97,0.08)] sm:p-12">
-              <p className="mx-auto max-w-4xl font-display text-3xl leading-tight text-ink sm:text-4xl">“They understood the soul of our celebration, then made every moving part feel entirely effortless.”</p>
+              <p className="mx-auto max-w-4xl font-display text-2xl leading-[1.35] text-ink sm:text-3xl">“They understood the soul of our celebration, then made every moving part feel entirely effortless.”</p>
               <footer className="mt-8 font-mono text-xs uppercase tracking-[0.16em] text-ink/50">Nnenna &amp; Ade · Ikoyi, Lagos</footer>
             </blockquote>
           </motion.div>
