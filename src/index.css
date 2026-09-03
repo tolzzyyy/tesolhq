@@ -75,7 +75,7 @@ img {
   font-family: "Playfair Display", serif;
   font-weight: 500;
   letter-spacing: -0.045em;
-  line-height: 0.96;
+  line-height: 1.08;
 }
 
 .eyebrow {
@@ -95,18 +95,18 @@ img {
 .brand-logo-crop {
   position: relative;
   display: block;
-  width: 5.9rem;
-  height: 3.2rem;
+  width: 5.3rem;
+  height: 2.85rem;
   flex: 0 0 auto;
   overflow: hidden;
-  background: #fff;
+  background: #000;
 }
 
 .brand-logo-crop img {
   position: absolute;
-  top: -77px;
-  left: -42px;
-  width: 160px;
+  top: -70px;
+  left: -40px;
+  width: 145px;
   max-width: none;
 }
 

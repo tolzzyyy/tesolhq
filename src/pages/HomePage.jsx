@@ -115,7 +115,7 @@ export default function HomePage() {
         <div className="page-shell grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
           <div className="relative z-10 lg:pb-10">
             <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16 }} className="mb-5 font-mono text-xs font-medium uppercase tracking-[0.18em] text-ink/55">Events, built differently.</motion.p>
-            <motion.h1 initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.22, duration: 0.75, ease: [0.22, 1, 0.36, 1] }} className="display-title text-[clamp(2.6rem,6.2vw,5.8rem)] text-ink">
+            <motion.h1 initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.22, duration: 0.75, ease: [0.22, 1, 0.36, 1] }} className="display-title text-[clamp(3rem,6.2vw,5.8rem)] text-ink">
               Building digital solutions for <span className="block italic text-berry sm:inline">every event.</span>
             </motion.h1>
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.48, duration: 0.6 }} className="mt-7 max-w-xl text-sm leading-7 text-ink/65 sm:text-base">
@@ -152,7 +152,7 @@ export default function HomePage() {
         <div className="page-shell grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
           <motion.div {...reveal}>
             <p className="eyebrow text-berry">The big idea</p>
-            <h2 className="display-title mt-6 text-4xl leading-[1.18] text-ink sm:text-5xl">Behind every great event is <span className="italic text-wine">a lot of moving parts.</span></h2>
+            <h2 className="display-title mt-6 text-4xl leading-[1.12] text-ink sm:text-5xl">Behind every great event is <span className="block italic text-wine sm:inline">a lot of moving parts.</span></h2>
           </motion.div>
 
           <motion.div {...reveal}>
@@ -163,7 +163,6 @@ export default function HomePage() {
               <div className="whitespace-nowrap border-b border-r border-wine/20 bg-wine px-3 py-5 font-mono text-[0.62rem] uppercase tracking-[0.06em] text-ink sm:px-4 sm:text-xs sm:tracking-[0.12em]">What happens next?</div>
             </div>
             <p className="mt-8 text-sm leading-8 text-ink/60"><strong className="font-bold text-ink">TESOL</strong> creates event websites, RSVP experiences, guest management systems, digital access solutions and custom event platforms designed around how your event actually works.</p>
-            <Link to="/services" className="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-plum">Explore Our Solutions <ArrowRight size={15} /></Link>
           </motion.div>
         </div>
       </section>
@@ -172,7 +171,7 @@ export default function HomePage() {
         <div className="page-shell">
           <motion.div {...reveal} className="grid gap-7 border-b border-wine/25 pb-12 lg:grid-cols-[0.65fr_1.35fr] lg:items-end">
             <p className="eyebrow text-berry">What TESOL builds</p>
-            <h2 className="display-title text-4xl text-ink sm:text-5xl">One event. <span className="italic text-wine">A lot of possibilities.</span></h2>
+            <h2 className="display-title text-4xl text-ink sm:text-5xl">One event. <span className="block italic text-wine sm:inline">A lot of possibilities.</span></h2>
           </motion.div>
 
           <div className="mt-8 grid gap-5 lg:auto-rows-fr lg:grid-cols-2">
@@ -182,7 +181,7 @@ export default function HomePage() {
                 <motion.article key={solution.title} {...reveal} transition={{ ...reveal.transition, delay: (index % 2) * 0.08 }} className={`group flex h-full min-h-[390px] flex-col rounded-[2rem] border border-wine/15 bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(98,54,97,0.1)] sm:p-9 ${index === solutions.length - 1 ? 'lg:col-span-2 lg:min-h-[280px] lg:flex-row lg:items-center lg:gap-14' : ''}`}>
                   <div className="flex items-center justify-between lg:min-w-40">
                     <span className="font-mono text-xs text-plum/55">{solution.number}</span>
-                    <span className="grid size-11 place-items-center rounded-full bg-berry text-ink transition duration-300 group-hover:-rotate-6 group-hover:bg-wine"><Icon size={19} /></span>
+                    <span className={`grid size-11 place-items-center ${index < 4 ? 'text-berry' : 'rounded-full bg-berry text-ink'}`}><Icon size={19} /></span>
                   </div>
                   <div className={index === solutions.length - 1 ? 'mt-8 lg:mt-0' : 'mt-10 flex flex-1 flex-col'}>
                     <h3 className="font-display text-2xl text-ink sm:text-3xl">{solution.title}</h3>
@@ -198,45 +197,20 @@ export default function HomePage() {
 
       <section className="noise overflow-hidden bg-blush py-24 text-ink lg:py-32">
         <div className="page-shell relative z-10">
-          <motion.div {...reveal} className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
-            <div>
-              <p className="eyebrow text-ink/55">How it unfolds</p>
-              <h2 className="display-title mt-6 text-4xl leading-[1.1] sm:text-5xl">A calm process for a <span className="italic text-wine">remarkable</span> event.</h2>
-              <p className="mt-8 max-w-md text-sm leading-8 text-ink/65">You stay close to the joyful decisions. We hold the timelines, suppliers, production details and all the things no guest should ever notice.</p>
-            </div>
-
-            <ol className="divide-y divide-ink/15 border-y border-ink/15">
-              {[
-                ['01', 'Listen', 'We begin with your people, priorities and the feeling you want to create.'],
-                ['02', 'Imagine', 'A tailored concept brings the story, setting and guest journey into focus.'],
-                ['03', 'Make it happen', 'We produce every detail and lead the day with a steady, trusted hand.'],
-              ].map(([number, title, text]) => (
-                <li key={number} className="grid grid-cols-[48px_1fr] gap-4 py-7 sm:grid-cols-[70px_160px_1fr] sm:items-start">
-                  <span className="font-mono text-xs text-ink/45">{number}</span>
-                  <span className="font-display text-xl text-ink">{title}</span>
-                  <span className="col-start-2 text-sm leading-7 text-ink/60 sm:col-start-3">{text}</span>
-                </li>
-              ))}
-            </ol>
+          <motion.div {...reveal} className="grid items-center gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
+            <h2 className="display-title text-4xl leading-[1.1] sm:text-5xl">A calm process for a <span className="italic text-berry">remarkable</span> event.</h2>
+            <blockquote className="rounded-[2rem] border border-berry/20 bg-white/65 p-8 text-center shadow-[0_24px_70px_rgba(98,54,97,0.08)] sm:p-12">
+              <p className="mx-auto max-w-4xl font-display text-3xl leading-tight text-ink sm:text-4xl">“They understood the soul of our celebration, then made every moving part feel entirely effortless.”</p>
+              <footer className="mt-8 font-mono text-xs uppercase tracking-[0.16em] text-ink/50">Nnenna &amp; Ade · Ikoyi, Lagos</footer>
+            </blockquote>
           </motion.div>
-
-          <motion.blockquote {...reveal} className="mt-24 border-t border-ink/15 pt-16 text-center">
-            <p className="mx-auto max-w-5xl font-display text-3xl leading-tight text-ink sm:text-4xl">“They understood the soul of our celebration, then made every moving part feel entirely effortless.”</p>
-            <footer className="mt-8 font-mono text-xs uppercase tracking-[0.16em] text-ink/50">Nnenna &amp; Ade · Ikoyi, Lagos</footer>
-          </motion.blockquote>
         </div>
       </section>
 
       <section id="inquire" className="scroll-mt-20 bg-parchment py-24 lg:py-32">
         <div className="page-shell grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
           <motion.div {...reveal}>
-            <p className="eyebrow text-ink/60">Start your project</p>
-            <h2 className="display-title mt-6 text-4xl text-ink sm:text-5xl">Have an event problem? <span className="italic text-wine">Good. Tell us.</span></h2>
-            <p className="mt-7 max-w-md text-sm leading-7 text-ink/65">Whether you know exactly what you need or only know what is not working, send us the details. We’ll help you find the right digital solution.</p>
-            <div className="mt-10 border-t border-ink/15 pt-7">
-              <p className="eyebrow text-ink/45">Prefer email?</p>
-              <a href="mailto:hello@tesolhq.com" className="mt-3 block break-all font-display text-2xl text-ink">hello@tesolhq.com</a>
-            </div>
+            <h2 className="display-title text-4xl text-ink sm:text-5xl">Tell us about your events</h2>
           </motion.div>
           <motion.div {...reveal}><InquiryForm /></motion.div>
         </div>
