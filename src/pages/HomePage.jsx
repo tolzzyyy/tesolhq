@@ -37,7 +37,7 @@ const solutions = [
     number: '04',
     title: 'QR Access',
     text: 'The guest list shouldn’t be doing crowd control. TESOL can turn your guest list into a smarter access experience using personalized QR codes and digital verification. Know who’s expected. Know who’s arrived. Know where they should be.',
-    cta: 'Explore QR Access Solutions',
+    cta: 'Explore QR Access',
     icon: QrCode,
   },
   {
@@ -50,6 +50,8 @@ const solutions = [
 ]
 
 const solutionOptions = ['Event Website', 'Wedding Website', 'RSVP & Guest Management', 'QR Access', 'Custom Event Solution']
+const movingParts = ['Guest lists', 'RSVPs', 'Access', 'Information', 'Schedules', 'Updates', 'Questions']
+
 function InquiryForm() {
   const [sent, setSent] = useState(false)
 
@@ -114,7 +116,7 @@ export default function HomePage() {
           <div className="relative z-10 lg:pb-10">
             <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16 }} className="mb-5 font-mono text-xs font-medium uppercase tracking-[0.18em] text-ink/55">Events, built differently.</motion.p>
             <motion.h1 initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.22, duration: 0.75, ease: [0.22, 1, 0.36, 1] }} className="display-title text-[clamp(2.6rem,6.2vw,5.8rem)] text-ink">
-              Building digital solutions for <span className="italic text-berry">every event.</span>
+              Building digital solutions for <span className="block italic text-berry sm:inline">every event.</span>
             </motion.h1>
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.48, duration: 0.6 }} className="mt-7 max-w-xl text-sm leading-7 text-ink/65 sm:text-base">
               TESOL delivers innovative digital solutions that bring together design and technology to create seamless, memorable event experiences.
@@ -146,30 +148,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="noise overflow-hidden bg-blush py-24 text-ink lg:py-32">
-        <div className="page-shell relative z-10">
-          <motion.div {...reveal} className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
-            <div>
-              <p className="eyebrow text-ink/55">The big idea</p>
-              <h2 className="display-title mt-8 text-4xl leading-[1.18] sm:text-5xl">Behind every great event is <span className="italic text-wine">a lot of moving parts.</span></h2>
-              <p className="mt-10 max-w-md text-sm leading-8 text-ink/65">Hundreds of people trying to figure out what happens next.</p>
-              <p className="mt-6 max-w-md text-sm leading-8 text-ink/65"><strong className="font-bold text-ink">TESOL</strong> creates event websites, RSVP experiences, guest management systems, digital access solutions and custom event platforms designed around how your event actually works.</p>
-              <Link to="/services" className="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-plum">Explore Our Solutions <ArrowRight size={15} /></Link>
-            </div>
+      <section className="bg-cream py-24 lg:py-32">
+        <div className="page-shell grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
+          <motion.div {...reveal}>
+            <p className="eyebrow text-berry">The big idea</p>
+            <h2 className="display-title mt-6 text-4xl leading-[1.18] text-ink sm:text-5xl">Behind every great event is <span className="italic text-wine">a lot of moving parts.</span></h2>
+          </motion.div>
 
-            <ol className="divide-y divide-ink/15 border-y border-ink/15">
-              {[
-                ['01', 'Guest lists', 'RSVPs, invitations and the questions guests need answered.'],
-                ['02', 'Information', 'Schedules, updates and the right details at the right time.'],
-                ['03', 'Access', 'Digital verification, arrivals and what happens next.'],
-              ].map(([number, title, text]) => (
-                <li key={number} className="grid grid-cols-[48px_1fr] gap-4 py-7 sm:grid-cols-[70px_160px_1fr] sm:items-start">
-                  <span className="font-mono text-xs text-ink/45">{number}</span>
-                  <span className="font-display text-xl text-ink">{title}</span>
-                  <span className="col-start-2 text-sm leading-7 text-ink/60 sm:col-start-3">{text}</span>
-                </li>
+          <motion.div {...reveal}>
+            <div className="grid grid-cols-2 border-l border-t border-wine/20 sm:grid-cols-3">
+              {movingParts.map((item) => (
+                <div key={item} className="border-b border-r border-wine/20 px-4 py-5 font-mono text-xs uppercase tracking-[0.12em] text-ink/65">{item}.</div>
               ))}
-            </ol>
+              <div className="whitespace-nowrap border-b border-r border-wine/20 bg-wine px-3 py-5 font-mono text-[0.62rem] uppercase tracking-[0.06em] text-ink sm:px-4 sm:text-xs sm:tracking-[0.12em]">What happens next?</div>
+            </div>
+            <p className="mt-8 text-sm leading-8 text-ink/60"><strong className="font-bold text-ink">TESOL</strong> creates event websites, RSVP experiences, guest management systems, digital access solutions and custom event platforms designed around how your event actually works.</p>
+            <Link to="/services" className="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-plum">Explore Our Solutions <ArrowRight size={15} /></Link>
           </motion.div>
         </div>
       </section>
@@ -199,6 +193,37 @@ export default function HomePage() {
               )
             })}
           </div>
+        </div>
+      </section>
+
+      <section className="noise overflow-hidden bg-blush py-24 text-ink lg:py-32">
+        <div className="page-shell relative z-10">
+          <motion.div {...reveal} className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
+            <div>
+              <p className="eyebrow text-ink/55">How it unfolds</p>
+              <h2 className="display-title mt-6 text-4xl leading-[1.1] sm:text-5xl">A calm process for a <span className="italic text-wine">remarkable</span> event.</h2>
+              <p className="mt-8 max-w-md text-sm leading-8 text-ink/65">You stay close to the joyful decisions. We hold the timelines, suppliers, production details and all the things no guest should ever notice.</p>
+            </div>
+
+            <ol className="divide-y divide-ink/15 border-y border-ink/15">
+              {[
+                ['01', 'Listen', 'We begin with your people, priorities and the feeling you want to create.'],
+                ['02', 'Imagine', 'A tailored concept brings the story, setting and guest journey into focus.'],
+                ['03', 'Make it happen', 'We produce every detail and lead the day with a steady, trusted hand.'],
+              ].map(([number, title, text]) => (
+                <li key={number} className="grid grid-cols-[48px_1fr] gap-4 py-7 sm:grid-cols-[70px_160px_1fr] sm:items-start">
+                  <span className="font-mono text-xs text-ink/45">{number}</span>
+                  <span className="font-display text-xl text-ink">{title}</span>
+                  <span className="col-start-2 text-sm leading-7 text-ink/60 sm:col-start-3">{text}</span>
+                </li>
+              ))}
+            </ol>
+          </motion.div>
+
+          <motion.blockquote {...reveal} className="mt-24 border-t border-ink/15 pt-16 text-center">
+            <p className="mx-auto max-w-5xl font-display text-3xl leading-tight text-ink sm:text-4xl">“They understood the soul of our celebration, then made every moving part feel entirely effortless.”</p>
+            <footer className="mt-8 font-mono text-xs uppercase tracking-[0.16em] text-ink/50">Nnenna &amp; Ade · Ikoyi, Lagos</footer>
+          </motion.blockquote>
         </div>
       </section>
 

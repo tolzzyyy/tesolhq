@@ -49,7 +49,7 @@ function Header() {
           to="/#inquire"
           className="hidden items-center gap-2 rounded-full bg-berry px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-wine md:inline-flex"
         >
-          Start your project <ArrowUpRight size={14} />
+          Submit an Enquiry <ArrowUpRight size={14} />
         </Link>
 
         <button
@@ -87,7 +87,7 @@ function Header() {
                 </motion.div>
               ))}
               <Link to="/#inquire" onClick={() => setMenuOpen(false)} className="mt-5 flex items-center justify-center gap-2 rounded-full bg-berry px-5 py-4 text-sm font-semibold text-white transition hover:bg-wine">
-                Start your project <ArrowUpRight size={16} />
+                Submit an Enquiry <ArrowUpRight size={16} />
               </Link>
             </div>
           </motion.nav>
