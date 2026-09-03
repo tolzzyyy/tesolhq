@@ -24,7 +24,7 @@ export default function PrivacyPage() {
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="eyebrow flex items-center gap-3 text-ink/55">
               <LockKeyhole size={14} /> Your privacy matters
             </motion.div>
-            <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12, duration: 0.7 }} className="display-title mt-7 max-w-4xl text-[clamp(3.25rem,6.5vw,6.1rem)]">
+            <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12, duration: 0.7 }} className="display-title mt-7 max-w-4xl text-[clamp(2.6rem,6.5vw,6.1rem)]">
               Privacy, in <span className="italic text-berry">plain language.</span>
             </motion.h1>
           </div>

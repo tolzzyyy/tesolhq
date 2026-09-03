@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, ArrowUpRight, Blocks, Check, Globe2, Heart, QrCode, Sparkles, UsersRound } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Blocks, Check, Globe2, Heart, QrCode, UsersRound } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import PageIntro from '../components/PageIntro'
 
@@ -15,7 +15,7 @@ const solutions = [
   {
     number: '01',
     title: 'Event Websites',
-    text: 'Give your event somewhere to live online. We build functional websites for conferences, corporate events, celebrations, launches and private gatherings — designed to give guests the right information at the right time.',
+    text: 'Give your event somewhere to live online. We build functional websites for conferences, corporate events, celebrations, launches and private gatherings, designed to give guests the right information at the right time.',
     cta: 'Explore Event Websites',
     icon: Globe2,
   },
@@ -50,8 +50,6 @@ const solutions = [
 ]
 
 const solutionOptions = ['Event Website', 'Wedding Website', 'RSVP & Guest Management', 'QR Access', 'Custom Event Solution']
-const movingParts = ['Guest lists', 'RSVPs', 'Access', 'Information', 'Schedules', 'Updates', 'Questions']
-
 function InquiryForm() {
   const [sent, setSent] = useState(false)
 
@@ -97,7 +95,7 @@ function InquiryForm() {
         </label>
       </div>
       <label className="eyebrow mt-7 block text-ink/60">
-        Tell us about the project
+        Tell us about your event
         <textarea className={`${fieldClass} min-h-24 resize-y`} name="message" placeholder="Your event, guest count and the problem you need to solve..." required />
       </label>
       <button type="submit" className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-berry px-6 py-4 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-wine sm:w-auto">
@@ -114,22 +112,16 @@ export default function HomePage() {
         <div className="absolute -left-36 top-44 size-96 rounded-full border border-wine/15 bg-blush/35" />
         <div className="page-shell grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
           <div className="relative z-10 lg:pb-10">
-            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="eyebrow mb-7 flex items-center gap-3 text-ink/65">
-              <span className="size-1.5 rounded-full bg-berry" /> Event technology · Digital experiences · Custom solutions
-            </motion.div>
             <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16 }} className="mb-5 font-mono text-xs font-medium uppercase tracking-[0.18em] text-ink/55">Events, built differently.</motion.p>
-            <motion.h1 initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.22, duration: 0.75, ease: [0.22, 1, 0.36, 1] }} className="display-title text-[clamp(3.1rem,6.2vw,5.8rem)] text-ink">
+            <motion.h1 initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.22, duration: 0.75, ease: [0.22, 1, 0.36, 1] }} className="display-title text-[clamp(2.6rem,6.2vw,5.8rem)] text-ink">
               Building digital solutions for <span className="italic text-berry">every event.</span>
             </motion.h1>
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.48, duration: 0.6 }} className="mt-7 max-w-xl text-sm leading-7 text-ink/65 sm:text-base">
               TESOL delivers innovative digital solutions that bring together design and technology to create seamless, memorable event experiences.
             </motion.p>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.58, duration: 0.6 }} className="mt-8 flex flex-wrap gap-3">
-              <Link to="/services" className="inline-flex items-center gap-2 rounded-full bg-berry px-6 py-4 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-wine">
-                Start Your Project <ArrowUpRight size={17} />
-              </Link>
-              <a href="#inquire" className="inline-flex items-center gap-2 rounded-full border border-ink/25 px-6 py-4 text-sm font-semibold text-ink transition hover:border-wine hover:bg-wine hover:text-white">
-                Submit an Enquiry
+              <a href="#inquire" className="inline-flex items-center gap-2 rounded-full bg-berry px-6 py-4 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-wine">
+                Submit an Enquiry <ArrowUpRight size={17} />
               </a>
             </motion.div>
           </div>
@@ -139,40 +131,45 @@ export default function HomePage() {
               <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1400&q=88" alt="A beautifully produced event space" className="image-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
             </div>
-            <div className="absolute -right-5 top-10 z-10 hidden size-28 place-items-center rounded-full border border-white/70 bg-berry text-center text-[0.62rem] font-semibold uppercase leading-4 tracking-[0.14em] text-ink shadow-xl sm:grid">
-              Design<br />meets<br />technology
-            </div>
           </motion.div>
         </div>
       </section>
 
-      <section className="overflow-hidden border-y border-berry/20 bg-berry/20 py-5">
+      <section className="overflow-hidden border-y border-berry/20 bg-blush py-5">
         <div className="marquee-track flex w-max items-center">
           {[...solutionOptions, ...solutionOptions].map((item, index) => (
             <div key={`${item}-${index}`} className="flex items-center">
               <span className="px-8 font-display text-lg italic text-ink/85 sm:px-12 sm:text-xl">{item}</span>
-              <Sparkles size={14} className="text-wine" />
+              <span className="size-2 shrink-0 rounded-full bg-berry" aria-hidden="true" />
             </div>
           ))}
         </div>
       </section>
 
-      <section className="bg-cream py-24 lg:py-32">
-        <div className="page-shell grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
-          <motion.div {...reveal}>
-            <p className="eyebrow text-berry">The big idea</p>
-            <h2 className="display-title mt-6 text-4xl text-ink sm:text-5xl">Behind every great event is <span className="italic text-wine">a lot of moving parts.</span></h2>
-          </motion.div>
-          <motion.div {...reveal}>
-            <div className="grid grid-cols-2 border-l border-t border-wine/20 sm:grid-cols-3">
-              {movingParts.map((item) => (
-                <div key={item} className="border-b border-r border-wine/20 px-4 py-5 font-mono text-xs uppercase tracking-[0.12em] text-ink/65">{item}.</div>
-              ))}
-              <div className="border-b border-r border-wine/20 bg-wine px-4 py-5 font-mono text-xs uppercase tracking-[0.12em] text-ink">What happens next?</div>
+      <section className="noise overflow-hidden bg-blush py-24 text-ink lg:py-32">
+        <div className="page-shell relative z-10">
+          <motion.div {...reveal} className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
+            <div>
+              <p className="eyebrow text-ink/55">The big idea</p>
+              <h2 className="display-title mt-8 text-4xl leading-[1.18] sm:text-5xl">Behind every great event is <span className="italic text-wine">a lot of moving parts.</span></h2>
+              <p className="mt-10 max-w-md text-sm leading-8 text-ink/65">Hundreds of people trying to figure out what happens next.</p>
+              <p className="mt-6 max-w-md text-sm leading-8 text-ink/65"><strong className="font-bold text-ink">TESOL</strong> creates event websites, RSVP experiences, guest management systems, digital access solutions and custom event platforms designed around how your event actually works.</p>
+              <Link to="/services" className="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-plum">Explore Our Solutions <ArrowRight size={15} /></Link>
             </div>
-            <p className="mt-8 text-base leading-8 text-ink/65">Hundreds of people trying to figure out what happens next. <strong className="font-semibold text-ink">We build the technology that brings those pieces together.</strong></p>
-            <p className="mt-5 text-sm leading-8 text-ink/60">TESOL creates event websites, RSVP experiences, guest management systems, digital access solutions and custom event platforms designed around how your event actually works.</p>
-            <Link to="/services" className="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-plum">Explore Our Solutions <ArrowRight size={15} /></Link>
+
+            <ol className="divide-y divide-ink/15 border-y border-ink/15">
+              {[
+                ['01', 'Guest lists', 'RSVPs, invitations and the questions guests need answered.'],
+                ['02', 'Information', 'Schedules, updates and the right details at the right time.'],
+                ['03', 'Access', 'Digital verification, arrivals and what happens next.'],
+              ].map(([number, title, text]) => (
+                <li key={number} className="grid grid-cols-[48px_1fr] gap-4 py-7 sm:grid-cols-[70px_160px_1fr] sm:items-start">
+                  <span className="font-mono text-xs text-ink/45">{number}</span>
+                  <span className="font-display text-xl text-ink">{title}</span>
+                  <span className="col-start-2 text-sm leading-7 text-ink/60 sm:col-start-3">{text}</span>
+                </li>
+              ))}
+            </ol>
           </motion.div>
         </div>
       </section>
@@ -184,19 +181,19 @@ export default function HomePage() {
             <h2 className="display-title text-4xl text-ink sm:text-5xl">One event. <span className="italic text-wine">A lot of possibilities.</span></h2>
           </motion.div>
 
-          <div className="mt-8 grid gap-5 lg:grid-cols-2">
+          <div className="mt-8 grid gap-5 lg:auto-rows-fr lg:grid-cols-2">
             {solutions.map((solution, index) => {
               const Icon = solution.icon
               return (
-                <motion.article key={solution.title} {...reveal} transition={{ ...reveal.transition, delay: (index % 2) * 0.08 }} className={`group flex min-h-[330px] flex-col rounded-[2rem] border border-wine/15 bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(98,54,97,0.1)] sm:p-9 ${index === solutions.length - 1 ? 'lg:col-span-2 lg:min-h-0 lg:flex-row lg:items-center lg:gap-14' : ''}`}>
+                <motion.article key={solution.title} {...reveal} transition={{ ...reveal.transition, delay: (index % 2) * 0.08 }} className={`group flex h-full min-h-[390px] flex-col rounded-[2rem] border border-wine/15 bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(98,54,97,0.1)] sm:p-9 ${index === solutions.length - 1 ? 'lg:col-span-2 lg:min-h-[280px] lg:flex-row lg:items-center lg:gap-14' : ''}`}>
                   <div className="flex items-center justify-between lg:min-w-40">
                     <span className="font-mono text-xs text-plum/55">{solution.number}</span>
                     <span className="grid size-11 place-items-center rounded-full bg-berry text-ink transition duration-300 group-hover:-rotate-6 group-hover:bg-wine"><Icon size={19} /></span>
                   </div>
-                  <div className={index === solutions.length - 1 ? 'mt-8 lg:mt-0' : 'mt-auto pt-12'}>
+                  <div className={index === solutions.length - 1 ? 'mt-8 lg:mt-0' : 'mt-10 flex flex-1 flex-col'}>
                     <h3 className="font-display text-2xl text-ink sm:text-3xl">{solution.title}</h3>
                     <p className="mt-4 max-w-2xl text-sm leading-7 text-ink/60">{solution.text}</p>
-                    <Link to={solution.number === '05' ? '/#inquire' : '/services'} className="mt-7 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-plum">{solution.cta} <ArrowRight size={14} /></Link>
+                    <Link to={solution.number === '05' ? '/#inquire' : '/services'} className={`inline-flex self-start items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-plum ${index === solutions.length - 1 ? 'mt-7' : 'mt-auto pt-7'}`}>{solution.cta} <ArrowRight size={14} /></Link>
                   </div>
                 </motion.article>
               )
@@ -213,7 +210,7 @@ export default function HomePage() {
             <p className="mt-7 max-w-md text-sm leading-7 text-ink/65">Whether you know exactly what you need or only know what is not working, send us the details. We’ll help you find the right digital solution.</p>
             <div className="mt-10 border-t border-ink/15 pt-7">
               <p className="eyebrow text-ink/45">Prefer email?</p>
-              <a href="mailto:hello@tesol.events" className="mt-3 block break-all font-display text-2xl text-ink">hello@tesol.events</a>
+              <a href="mailto:hello@tesolhq.com" className="mt-3 block break-all font-display text-2xl text-ink">hello@tesolhq.com</a>
             </div>
           </motion.div>
           <motion.div {...reveal}><InquiryForm /></motion.div>

@@ -9,7 +9,7 @@ const serviceDetails = [
     number: '01',
     title: 'Event Websites',
     lead: 'Give your event somewhere to live online.',
-    description: 'We build functional websites for conferences, corporate events, celebrations, launches and private gatherings — designed to give guests the right information at the right time.',
+    description: 'We build functional websites for conferences, corporate events, celebrations, launches and private gatherings, designed to give guests the right information at the right time.',
     includes: ['Event information architecture', 'Responsive custom design', 'Schedules and speaker details', 'Guest information and FAQs', 'Updates from one central place'],
   },
   {
@@ -77,7 +77,7 @@ export default function ServicesPage() {
         <div className="page-shell relative z-10 grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
           <div>
             <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="eyebrow text-ink/60">Explore our solutions</motion.p>
-            <motion.h1 initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12, duration: 0.7 }} className="display-title mt-7 max-w-4xl text-[clamp(3.1rem,6vw,5.8rem)] text-ink">
+            <motion.h1 initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12, duration: 0.7 }} className="display-title mt-7 max-w-4xl text-[clamp(2.6rem,6vw,5.8rem)] text-ink">
               One event. <span className="italic text-berry">A lot of possibilities.</span>
             </motion.h1>
           </div>

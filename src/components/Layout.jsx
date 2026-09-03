@@ -119,8 +119,8 @@ function Footer() {
 
         <div>
           <p className="eyebrow text-ink/45">Say hello</p>
-          <a className="mt-5 block font-display text-2xl text-ink transition hover:text-berry" href="mailto:hello@tesol.events">
-            hello@tesol.events
+          <a className="mt-5 block font-display text-2xl text-ink transition hover:text-berry" href="mailto:hello@tesolhq.com">
+            hello@tesolhq.com
           </a>
           <p className="mt-3 text-sm text-ink/55">Lagos, Nigeria · Available worldwide</p>
           <a href="https://instagram.com" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 text-sm text-ink/65 transition hover:text-ink">
