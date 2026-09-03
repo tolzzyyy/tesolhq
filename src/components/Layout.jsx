@@ -123,10 +123,16 @@ function Footer() {
             hello@tesolhq.com
           </a>
           <p className="mt-3 text-sm text-ink/55">Lagos, Nigeria · Available worldwide</p>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 text-sm text-ink/65 transition hover:text-ink">
-            <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.4" cy="6.7" r=".8" fill="currentColor" stroke="none" /></svg>
-            Instagram
-          </a>
+          <div className="mt-6 flex flex-wrap items-center gap-5">
+            <a href="https://www.instagram.com/tesolhq?igsi=dnQyOHlmNXZzbDk5&utm_source=qr" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm text-ink/65 transition hover:text-ink">
+              <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.4" cy="6.7" r=".8" fill="currentColor" stroke="none" /></svg>
+              Instagram
+            </a>
+            <a href="https://x.com/tesolhq?s=21" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm text-ink/65 transition hover:text-ink">
+              <svg viewBox="0 0 24 24" className="size-4" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z" /></svg>
+              X
+            </a>
+          </div>
         </div>
       </div>
 

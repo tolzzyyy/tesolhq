@@ -109,7 +109,9 @@ function InquiryForm() {
 
 export default function HomePage() {
   const heroVideoRef = useRef(null)
-  const [heroVideoPlaying, setHeroVideoPlaying] = useState(false)
+  const [heroVideoSource] = useState(() => window.matchMedia('(max-width: 639px)').matches
+    ? '/hero-event-mobile-v3.mp4'
+    : '/hero-event-desktop-v3.mp4')
 
   useEffect(() => {
     const video = heroVideoRef.current
@@ -119,7 +121,8 @@ export default function HomePage() {
       video.muted = true
       video.defaultMuted = true
       video.controls = false
-      video.play().catch(() => {})
+      const playback = video.play()
+      if (playback) playback.catch(() => {})
     }
 
     const restartWhenVisible = () => {
@@ -127,11 +130,13 @@ export default function HomePage() {
     }
 
     startVideo()
+    video.addEventListener('loadedmetadata', startVideo)
     video.addEventListener('loadeddata', startVideo)
     video.addEventListener('canplay', startVideo)
     document.addEventListener('visibilitychange', restartWhenVisible)
 
     return () => {
+      video.removeEventListener('loadedmetadata', startVideo)
       video.removeEventListener('loadeddata', startVideo)
       video.removeEventListener('canplay', startVideo)
       document.removeEventListener('visibilitychange', restartWhenVisible)
@@ -160,10 +165,7 @@ export default function HomePage() {
 
           <motion.div initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }} className="relative lg:ml-4">
             <div className="noise h-[520px] overflow-hidden rounded-[2rem_2rem_8rem_2rem] sm:h-[620px]">
-              <img src="/hero-event-poster.jpg" alt="" className="image-cover absolute inset-0" aria-hidden="true" />
-              <video ref={heroVideoRef} autoPlay loop muted playsInline preload="auto" controls={false} disablePictureInPicture disableRemotePlayback poster="/hero-event-poster.jpg" onPlaying={() => setHeroVideoPlaying(true)} onPause={() => setHeroVideoPlaying(false)} className={`hero-video image-cover absolute inset-0 transition-opacity duration-300 ${heroVideoPlaying ? 'opacity-100' : 'opacity-0'}`} aria-label="A beautifully produced event experience" tabIndex={-1}>
-                <source src="/hero-event.mp4" type="video/mp4" />
-              </video>
+              <video ref={heroVideoRef} src={heroVideoSource} autoPlay loop muted playsInline preload="auto" controls={false} disablePictureInPicture disableRemotePlayback poster="/hero-event-poster.jpg" className="hero-video image-cover" aria-label="A beautifully produced event experience" tabIndex={-1} />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
             </div>
           </motion.div>
@@ -233,7 +235,7 @@ export default function HomePage() {
           <motion.div {...reveal} className="grid items-center gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
             <h2 className="display-title text-center text-[clamp(1.625rem,7vw,1.875rem)] sm:text-5xl">A calm process for a <span className="block sm:inline"><span className="italic text-berry">remarkable</span> event.</span></h2>
             <blockquote className="rounded-[2rem] border border-berry/20 bg-white/65 p-8 text-center shadow-[0_24px_70px_rgba(98,54,97,0.08)] sm:p-12">
-              <p className="mx-auto max-w-4xl font-display text-2xl leading-[1.35] text-ink sm:text-3xl">“They understood the soul of our celebration, then made every moving part feel entirely effortless.”</p>
+              <p className="mx-auto max-w-4xl font-display text-xl leading-[1.4] text-ink sm:text-2xl">“They understood the soul of our celebration, then made every moving part feel entirely effortless.”</p>
               <footer className="mt-8 font-mono text-xs uppercase tracking-[0.16em] text-ink/50">Nnenna &amp; Ade · Ikoyi, Lagos</footer>
             </blockquote>
           </motion.div>
