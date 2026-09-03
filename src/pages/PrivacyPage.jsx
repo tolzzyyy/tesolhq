@@ -29,8 +29,8 @@ export default function PrivacyPage() {
             </motion.h1>
           </div>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35 }} className="lg:pb-2">
-            <p className="max-w-md text-sm leading-7 text-ink/65">We value the trust that comes with planning something personal. This policy explains what information we collect, why we use it and the choices you have.</p>
-            <p className="mt-6 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-ink/50">Effective 31 August 2026</p>
+            <p className="max-w-md text-sm leading-7 text-ink/65">We value the trust that comes with handling event and guest data. This policy explains what information we collect, why we use it and the choices you have.</p>
+            <p className="mt-6 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-ink/50">Effective 3 September 2026</p>
           </motion.div>
         </div>
       </section>
@@ -56,7 +56,7 @@ export default function PrivacyPage() {
             <section id="overview" className="scroll-mt-28">
               <p className="eyebrow !mb-5 !text-xs !leading-none !text-berry">01 · Overview</p>
               <h2 className="!mt-0">Who we are</h2>
-              <p>Tesol, short for The Event Solutions (“Tesol”, “we”, “us” or “our”), is an event planning and creative production business based in Lagos, Nigeria. This Privacy Policy applies when you visit our website, submit an enquiry, become a client, attend an event we manage, join our mailing list or otherwise interact with us.</p>
+              <p>Tesol, short for The Event Solutions (“Tesol”, “we”, “us” or “our”), is an event-technology and digital solutions business based in Lagos, Nigeria. This Privacy Policy applies when you visit our website, submit an enquiry, become a client, use a digital event experience we provide, join our mailing list or otherwise interact with us.</p>
               <p>By using our website or providing information to us, you acknowledge the practices described in this policy. Where consent is the appropriate legal basis, we will ask for it clearly.</p>
             </section>
 
@@ -66,14 +66,14 @@ export default function PrivacyPage() {
               <p>The information we collect depends on how you interact with us and may include:</p>
               <ul>
                 <li><strong>Contact information</strong>, such as your name, email address, telephone number and postal address.</li>
-                <li><strong>Event information</strong>, including event dates, locations, guest numbers, budgets, preferences and details needed to plan or attend an event.</li>
-                <li><strong>Client and supplier records</strong>, such as proposals, agreements, invoices, payment status and business contact details.</li>
-                <li><strong>Guest information</strong> provided by a client or directly by a guest, including RSVP responses, dietary needs, accessibility requests and seating preferences.</li>
+                <li><strong>Event and platform information</strong>, including event dates, locations, schedules, invitations, access rules and details needed to build or use an event solution.</li>
+                <li><strong>Client and service records</strong>, such as project briefs, proposals, agreements, invoices, payment status and business contact details.</li>
+                <li><strong>Guest information</strong> provided by an event organiser or directly by a guest, including invitation status, RSVP responses, access permissions, QR identifiers, dietary needs and accessibility requests.</li>
                 <li><strong>Communications</strong> you send us by email, enquiry form, telephone, social media or other channels.</li>
                 <li><strong>Technical information</strong>, including device type, browser, approximate location, IP address and website activity collected through cookies or similar technologies.</li>
               </ul>
               <h3>Sensitive information</h3>
-              <p>Some event details—such as dietary requirements or accessibility needs—may reveal sensitive information. We collect and use this only when it is necessary to provide the requested service and where we have an appropriate legal basis.</p>
+              <p>Some event details—such as dietary requirements or accessibility needs—may reveal sensitive information. We collect and use this only when it is necessary to provide the requested digital experience and where we have an appropriate legal basis.</p>
             </section>
 
             <section id="use" className="scroll-mt-28">
@@ -82,8 +82,9 @@ export default function PrivacyPage() {
               <p>We use personal information to:</p>
               <ul>
                 <li>respond to enquiries and prepare tailored proposals;</li>
-                <li>plan, produce and manage events and guest experiences;</li>
-                <li>coordinate with venues, caterers, accommodation providers and other event partners;</li>
+                <li>design, build, operate and support event websites and custom platforms;</li>
+                <li>manage RSVPs, guest records, invitations, QR codes and digital access permissions;</li>
+                <li>deliver event information, updates and guest communications;</li>
                 <li>manage contracts, invoices, payments and our business records;</li>
                 <li>send service-related messages and important event updates;</li>
                 <li>send marketing communications where you have opted in or where otherwise permitted;</li>
@@ -98,13 +99,14 @@ export default function PrivacyPage() {
               <h2 className="!mt-0">The partners who help us deliver</h2>
               <p>We do not sell or rent your personal information. We may share only what is reasonably necessary with:</p>
               <ul>
-                <li>venues, caterers, florists, production teams, transport providers and other suppliers involved in your event;</li>
+                <li>the client or authorised event organiser responsible for the relevant guest experience;</li>
+                <li>hosting, email, messaging, analytics and other technology providers used to operate our solutions;</li>
                 <li>professional advisers, insurers, accountants and legal providers;</li>
                 <li>technology providers that host our website, email, documents, forms, guest lists and business systems;</li>
                 <li>government bodies, regulators, courts or law enforcement where disclosure is required by law; and</li>
                 <li>a successor or buyer if our business is reorganised, sold or transferred.</li>
               </ul>
-              <p>When a supplier acts on our behalf, we expect them to protect the information, use it only for the agreed purpose and retain it only as long as necessary.</p>
+              <p>When a service provider acts on our behalf, we expect them to protect the information, use it only for the agreed purpose and retain it only as long as necessary.</p>
             </section>
 
             <section id="cookies" className="scroll-mt-28">
@@ -117,7 +119,7 @@ export default function PrivacyPage() {
             <section id="retention" className="scroll-mt-28">
               <p className="eyebrow !mb-5 !mt-14 !text-xs !leading-none !text-berry">06 · Retention & security</p>
               <h2 className="!mt-0">Keeping information safe</h2>
-              <p>We retain personal information only for as long as it is needed for the purposes described in this policy, including to complete an event, maintain appropriate business and tax records, resolve disputes and meet legal obligations. Retention periods vary by record type and context.</p>
+              <p>We retain personal information only for as long as it is needed for the purposes described in this policy, including to deliver a project or event solution, maintain appropriate business and tax records, resolve disputes and meet legal obligations. Retention periods vary by record type and context.</p>
               <p>We use reasonable administrative, technical and physical safeguards designed to protect personal information from loss, misuse and unauthorised access. No online service or storage system can be guaranteed completely secure, but we review our practices and limit access to those who need the information.</p>
               <h3>International transfers</h3>
               <p>Some service providers may process information outside Nigeria. Where this happens, we take reasonable steps to ensure an appropriate level of protection through contractual or other lawful safeguards.</p>

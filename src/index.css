@@ -1,26 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --color-ink: #281327;
   --color-plum: #623661;
   --color-wine: #c077bf;
-  --color-berry: #f185ad;
+  --color-berry: #ed397a;
   --color-rosewood: #c077bf;
-  --color-blush: #fbe6ef;
-  --color-parchment: #fcf6fa;
-  --color-cream: #ffffff;
-  --color-gold: #f185ad;
+  --color-blush: #f5d6e8;
+  --color-parchment: #faf1f8;
+  --color-cream: #fff9fd;
+  --color-gold: #ed397a;
   --color-sage: #a285a1;
-  --font-sans: "Manrope", sans-serif;
+  --font-sans: "Poppins", sans-serif;
   --font-display: "Playfair Display", serif;
   --font-mono: "DM Mono", monospace;
 }
 
 :root {
-  font-family: "Manrope", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
   color: #281327;
-  background: #ffffff;
+  background: #fff9fd;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -33,7 +34,7 @@
 
 html {
   scroll-behavior: smooth;
-  background: #ffffff;
+  background: #fff9fd;
 }
 
 body {

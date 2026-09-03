@@ -1,6 +1,6 @@
 # Tesol — The Event Solutions
 
-A polished three-page website for an event-planning studio, built with React, Vite, Tailwind CSS and Framer Motion.
+A polished three-page website for TESOL, an event-technology and digital solutions company, built with React, Vite, Tailwind CSS and Framer Motion.
 
 ## Pages
 

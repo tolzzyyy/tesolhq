@@ -47,9 +47,9 @@ function Header() {
 
         <Link
           to="/#inquire"
-          className="hidden items-center gap-2 rounded-full bg-berry px-5 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-ink transition hover:-translate-y-0.5 hover:bg-wine md:inline-flex"
+          className="hidden items-center gap-2 rounded-full bg-berry px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-wine md:inline-flex"
         >
-          Start planning <ArrowUpRight size={14} />
+          Start your project <ArrowUpRight size={14} />
         </Link>
 
         <button
@@ -86,8 +86,8 @@ function Header() {
                   </NavLink>
                 </motion.div>
               ))}
-              <Link to="/#inquire" onClick={() => setMenuOpen(false)} className="mt-5 flex items-center justify-center gap-2 rounded-full bg-berry px-5 py-4 text-sm font-semibold text-ink">
-                Start planning <ArrowUpRight size={16} />
+              <Link to="/#inquire" onClick={() => setMenuOpen(false)} className="mt-5 flex items-center justify-center gap-2 rounded-full bg-berry px-5 py-4 text-sm font-semibold text-white transition hover:bg-wine">
+                Start your project <ArrowUpRight size={16} />
               </Link>
             </div>
           </motion.nav>
@@ -104,7 +104,7 @@ function Footer() {
         <div>
           <BrandMark />
           <p className="mt-6 max-w-sm text-sm leading-7 text-ink/65">
-            Considered celebrations, personal details, and calm coordination from first conversation to final toast.
+            Digital solutions that bring design and technology together for seamless, memorable event experiences.
           </p>
         </div>
 
@@ -132,8 +132,8 @@ function Footer() {
 
       <div className="border-t border-ink/15">
         <div className="page-shell flex flex-col gap-3 py-6 text-xs text-ink/50 sm:flex-row sm:items-center sm:justify-between">
-          <span>© 2026 Tesol — The Event Solutions. All rights reserved.</span>
-          <span>Made for gatherings worth remembering.</span>
+          <span>© 2024 Tesol — The Event Solutions. All rights reserved.</span>
+          <span>Building digital solutions for every event.</span>
         </div>
       </div>
     </footer>

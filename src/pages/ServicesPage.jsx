@@ -7,51 +7,59 @@ import PageIntro from '../components/PageIntro'
 const serviceDetails = [
   {
     number: '01',
-    title: 'Full-service weddings',
-    subtitle: 'For celebrations that deserve room to breathe.',
-    description: 'We guide the entire journey—from your first ideas and venue search to the last song of the night. The result is refined, personal and entirely yours, with our team quietly managing every layer behind it.',
-    image: 'https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1200&q=88',
-    alt: 'Elegant place setting at a formal event',
-    includes: ['Creative direction & event identity', 'Venue and supplier curation', 'Guest journey & RSVP planning', 'Budget, timeline & production management', 'On-the-day coordination'],
+    title: 'Event Websites',
+    lead: 'Give your event somewhere to live online.',
+    description: 'We build functional websites for conferences, corporate events, celebrations, launches and private gatherings — designed to give guests the right information at the right time.',
+    includes: ['Event information architecture', 'Responsive custom design', 'Schedules and speaker details', 'Guest information and FAQs', 'Updates from one central place'],
   },
   {
     number: '02',
-    title: 'Private celebrations',
-    subtitle: 'Milestones made deeply personal.',
-    description: 'A significant birthday, intimate dinner or long-awaited anniversary should feel unmistakably like its host. We build the experience around the people in the room, with thoughtful details that invite connection.',
-    image: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=88',
-    alt: 'Long dinner table set for an elegant celebration',
-    includes: ['Concept & tablescape design', 'Venue sourcing', 'Food, drink & entertainment curation', 'Invitations and guest communications', 'Full event-day production'],
+    title: 'Wedding Websites',
+    lead: 'Your wedding has a story. Your website should tell it properly.',
+    description: 'We create custom wedding websites that bring your love story, event details, RSVP, guest information, FAQs, travel details and more into one beautifully designed experience.',
+    includes: ['Your story and visual identity', 'Multi-event details', 'Integrated RSVP journey', 'Travel and accommodation', 'Guest FAQs and updates'],
   },
   {
     number: '03',
-    title: 'Brand experiences',
-    subtitle: 'Where your brand becomes a feeling.',
-    description: 'From launches and press dinners to community moments, we create polished, purposeful events that express your brand in three dimensions and give guests something worth talking about.',
-    image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=88',
-    alt: 'Immersive stage lighting at a live brand event',
-    includes: ['Experience strategy & creative concept', 'Spatial and sensory design', 'Production partner management', 'Guest list flow & hospitality', 'Show calling and live delivery'],
+    title: 'RSVP & Guest Management',
+    lead: 'Who exactly is coming? Know before they arrive.',
+    description: 'Create controlled RSVP experiences where guests can search for their names, access only the events they’re invited to and submit their responses.',
+    includes: ['Searchable guest lists', 'Invitation-based event access', 'RSVP response collection', 'Guest categories and permissions', 'Live attendance visibility'],
+  },
+  {
+    number: '04',
+    title: 'QR Access',
+    lead: 'The guest list shouldn’t be doing crowd control.',
+    description: 'TESOL can turn your guest list into a smarter access experience using personalized QR codes and digital verification. Know who’s expected. Know who’s arrived. Know where they should be.',
+    includes: ['Personalized guest QR codes', 'Fast digital verification', 'Arrival and attendance tracking', 'Access rules by event or zone', 'Simple tools for access teams'],
+  },
+  {
+    number: '05',
+    title: 'Custom Event Solutions',
+    lead: 'Have a very specific problem? Good. Tell us.',
+    description: 'If your event needs something that doesn’t fit neatly into a box, we can design and build a solution around it.',
+    includes: ['Problem and workflow discovery', 'Tailored product strategy', 'Custom design and development', 'Testing around real event needs', 'Launch and event support'],
   },
 ]
 
 const faqs = [
-  ['How far in advance should we reach out?', 'For full-service weddings, 9–15 months gives us the best range of venues and suppliers. Private and brand events can often be planned within 8–16 weeks, depending on scale. If your date is closer, still get in touch—we love a focused brief.'],
-  ['Do you plan events outside Lagos?', 'Yes. We produce celebrations across Nigeria and take on a select number of destination events each year. Travel and local production support are scoped clearly in your proposal.'],
-  ['Can you work with suppliers we have already booked?', 'Absolutely. We are happy to join an existing team, review what is already in place and build the remaining plan around your confirmed partners.'],
-  ['What does your fee cover?', 'Our fee reflects creative development, planning time, supplier management and live production. After our discovery call, you will receive a tailored scope and transparent fee based on your event’s size and complexity.'],
+  ['What types of events does TESOL support?', 'We build solutions for conferences, corporate events, launches, weddings, private gatherings and other experiences that need a clear digital guest journey.'],
+  ['Can TESOL work with an existing guest list?', 'Yes. We can structure and import an existing guest list, then build the RSVP, invitation and access rules around how your event is organised.'],
+  ['Can guests be invited to different parts of an event?', 'Yes. Controlled RSVP flows can show each guest only the events, sessions or access areas assigned to them.'],
+  ['What if we need something not listed here?', 'That is exactly what our custom event solutions are for. Tell us the problem, the people involved and how the event needs to work, and we will scope a tailored approach.'],
 ]
 
 function FaqItem({ question, answer, isOpen, onClick }) {
   return (
-    <div className="border-b border-wine/12">
+    <div className="border-b border-ink/15">
       <button type="button" onClick={onClick} className="flex w-full items-center justify-between gap-6 py-6 text-left" aria-expanded={isOpen}>
-        <span className="font-display text-xl text-ink sm:text-2xl">{question}</span>
-        <span className="grid size-9 shrink-0 place-items-center rounded-full border border-wine/15 text-wine">{isOpen ? <Minus size={15} /> : <Plus size={15} />}</span>
+        <span className="font-display text-lg text-ink sm:text-xl">{question}</span>
+        <span className="grid size-9 shrink-0 place-items-center rounded-full border border-ink/20 text-ink">{isOpen ? <Minus size={15} /> : <Plus size={15} />}</span>
       </button>
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
-            <p className="max-w-3xl pb-7 text-sm leading-7 text-ink/55">{answer}</p>
+            <p className="max-w-3xl pb-7 text-sm leading-7 text-ink/65">{answer}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -68,52 +76,48 @@ export default function ServicesPage() {
         <div className="absolute right-[-8rem] top-12 size-[32rem] rounded-full border border-wine/15 bg-blush/35" />
         <div className="page-shell relative z-10 grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
           <div>
-            <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="eyebrow text-berry">How we can help</motion.p>
-            <motion.h1 initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12, duration: 0.7 }} className="display-title mt-7 max-w-4xl text-[clamp(3.25rem,6.5vw,6.1rem)] text-ink">
-              Thoughtfully planned. <span className="italic text-berry">Beautifully felt.</span>
+            <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="eyebrow text-ink/60">Explore our solutions</motion.p>
+            <motion.h1 initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12, duration: 0.7 }} className="display-title mt-7 max-w-4xl text-[clamp(3.1rem,6vw,5.8rem)] text-ink">
+              One event. <span className="italic text-berry">A lot of possibilities.</span>
             </motion.h1>
           </div>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35 }} className="lg:pb-2">
-            <p className="max-w-lg text-base leading-8 text-ink/55">Our work sits at the meeting point of creative direction and exacting production. Every service is tailored, every recommendation considered, every event held with care.</p>
-            <a href="#services-list" className="mt-7 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-berry">Explore our services <ArrowDown size={15} /></a>
+            <p className="max-w-lg text-base leading-8 text-ink/65">Event websites, RSVP experiences, guest management systems, digital access and custom platforms — built around how your event actually works.</p>
+            <a href="#services-list" className="mt-7 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-ink">See what we build <ArrowDown size={15} /></a>
           </motion.div>
         </div>
       </section>
 
-      <section id="services-list" className="scroll-mt-20 bg-cream py-24 lg:py-32">
-        <div className="page-shell space-y-24 lg:space-y-36">
+      <section id="services-list" className="scroll-mt-20 bg-cream py-20 lg:py-28">
+        <div className="page-shell">
           {serviceDetails.map((service, index) => (
             <motion.article
               key={service.title}
-              initial={{ opacity: 0, y: 35 }}
+              initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-20"
+              transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+              className="grid gap-7 border-t border-wine/25 py-12 lg:grid-cols-[100px_1fr_0.9fr] lg:gap-14 lg:py-16"
             >
-              <div className={`relative ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                <div className={`noise h-[470px] overflow-hidden ${index === 1 ? 'rounded-[8rem_2rem_2rem_2rem]' : 'rounded-[2rem_2rem_8rem_2rem]'} sm:h-[580px]`}>
-                  <img src={service.image} alt={service.alt} className="image-cover" />
-                </div>
-                <span className="absolute -bottom-5 right-5 z-10 grid size-20 place-items-center rounded-full border-4 border-cream bg-berry font-mono text-xs text-ink sm:-right-5 sm:size-24">{service.number}</span>
+              <div>
+                <span className={`grid size-16 place-items-center rounded-full font-mono text-xs text-ink ${index % 2 === 0 ? 'bg-berry' : 'bg-wine'}`}>{service.number}</span>
               </div>
-
-              <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                <p className="eyebrow text-berry">{service.subtitle}</p>
-                <h2 className="display-title mt-6 text-4xl text-ink sm:text-5xl">{service.title}</h2>
-                <p className="mt-7 text-sm leading-8 text-ink/55">{service.description}</p>
-                <div className="mt-9 border-t border-wine/12 pt-7">
-                  <p className="eyebrow text-wine/40">What this can include</p>
-                  <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-                    {service.includes.map((item) => (
-                      <li key={item} className="flex items-start gap-3 text-sm leading-6 text-ink/65">
-                        <span className="mt-1 grid size-4 shrink-0 place-items-center rounded-full bg-blush text-wine"><Check size={10} strokeWidth={2.5} /></span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <Link to="/#inquire" className="mt-9 inline-flex items-center gap-2 rounded-full border border-berry/50 px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.13em] text-plum transition hover:border-berry hover:bg-berry hover:text-ink">Discuss your event <ArrowUpRight size={15} /></Link>
+              <div>
+                <p className="eyebrow text-plum/60">{service.lead}</p>
+                <h2 className="display-title mt-5 text-4xl text-ink sm:text-5xl">{service.title}</h2>
+                <p className="mt-6 max-w-2xl text-sm leading-8 text-ink/65">{service.description}</p>
+                <Link to="/#inquire" className="mt-7 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.13em] text-plum">Talk to us about this <ArrowUpRight size={14} /></Link>
+              </div>
+              <div className="rounded-2xl bg-parchment p-6 sm:p-7">
+                <p className="eyebrow text-plum/55">This can include</p>
+                <ul className="mt-5 space-y-3">
+                  {service.includes.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm leading-6 text-ink/65">
+                      <span className="mt-1 grid size-4 shrink-0 place-items-center rounded-full bg-berry text-ink"><Check size={10} strokeWidth={2.5} /></span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </motion.article>
           ))}
@@ -123,20 +127,20 @@ export default function ServicesPage() {
       <section className="bg-blush py-24 text-ink lg:py-28">
         <div className="page-shell grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-24">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <p className="eyebrow text-ink/55">Our approach</p>
-            <h2 className="display-title mt-6 text-4xl sm:text-5xl">The polish you see. The rigour <span className="italic text-wine">you don’t.</span></h2>
+            <p className="eyebrow text-ink/55">How we think</p>
+            <h2 className="display-title mt-6 text-4xl sm:text-5xl">Design and technology, built around <span className="italic text-wine">the real event.</span></h2>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="grid gap-x-10 gap-y-9 sm:grid-cols-2">
             {[
-              ['One clear point of contact', 'You always know who to call, what happens next and where every decision stands.'],
-              ['A trusted creative network', 'We bring together excellent suppliers whose craft and care match the vision.'],
-              ['Beautifully managed budgets', 'Ambition and investment stay aligned through clear, current cost planning.'],
-              ['Presence on the day', 'Our production team holds every cue so you can be entirely inside the moment.'],
+              ['Understand the event', 'We map the guests, information, access rules and moving parts before deciding what to build.'],
+              ['Design the journey', 'Every screen and interaction is shaped around what organisers and guests need to do next.'],
+              ['Build and test', 'We turn the agreed experience into a reliable digital product and test the important paths.'],
+              ['Support the launch', 'We help your team get ready, bring the platform live and support the event experience.'],
             ].map(([title, text], index) => (
               <div key={title} className="border-t border-ink/15 pt-5">
                 <span className="font-mono text-[0.62rem] text-ink/45">0{index + 1}</span>
-                <h3 className="mt-3 font-display text-2xl">{title}</h3>
-                <p className="mt-3 text-sm leading-7 text-ink/60">{text}</p>
+                <h3 className="mt-3 font-display text-xl">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-ink/65">{text}</p>
               </div>
             ))}
           </motion.div>
@@ -147,10 +151,9 @@ export default function ServicesPage() {
         <div className="page-shell grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
           <div>
             <p className="eyebrow text-berry">Good to know</p>
-            <h2 className="display-title mt-6 text-4xl text-ink sm:text-5xl">A few common <span className="italic text-rosewood">questions.</span></h2>
-            <p className="mt-6 max-w-sm text-sm leading-7 text-ink/50">Still wondering about something? Send us a note and we’ll happily talk it through.</p>
+            <h2 className="display-title mt-6 text-4xl text-ink sm:text-5xl">A few common <span className="italic text-wine">questions.</span></h2>
           </div>
-          <div className="border-t border-wine/12">
+          <div className="border-t border-ink/15">
             {faqs.map(([question, answer], index) => (
               <FaqItem key={question} question={question} answer={answer} isOpen={openFaq === index} onClick={() => setOpenFaq(openFaq === index ? -1 : index)} />
             ))}
@@ -160,9 +163,10 @@ export default function ServicesPage() {
 
       <section className="bg-cream py-20 lg:py-28">
         <div className="page-shell overflow-hidden rounded-[2rem] border border-wine/15 bg-blush px-6 py-16 text-center text-ink sm:px-12 lg:py-24">
-          <p className="eyebrow text-ink/55">Have a date in mind?</p>
-          <h2 className="display-title mx-auto mt-6 max-w-4xl text-4xl sm:text-5xl lg:text-6xl">Let’s make something <span className="italic text-berry">wonderful</span> together.</h2>
-          <Link to="/#inquire" className="mt-9 inline-flex items-center gap-2 rounded-full bg-berry px-6 py-4 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-wine">Start a conversation <ArrowUpRight size={17} /></Link>
+          <p className="eyebrow text-ink/55">Have a specific problem?</p>
+          <h2 className="display-title mx-auto mt-6 max-w-4xl text-4xl sm:text-5xl">Good. <span className="italic text-berry">Tell us.</span></h2>
+          <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-ink/65">If your event needs something that does not fit neatly into a box, we can design and build a solution around it.</p>
+          <Link to="/#inquire" className="mt-9 inline-flex items-center gap-2 rounded-full bg-berry px-6 py-4 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-wine">Reach Out To Us <ArrowUpRight size={17} /></Link>
         </div>
       </section>
     </PageIntro>
