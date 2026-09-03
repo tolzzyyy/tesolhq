@@ -97,7 +97,7 @@ function InquiryForm() {
         </label>
       </div>
       <label className="eyebrow mt-7 block text-ink/60">
-        Tell us about your event
+        Tell us about your event.
         <textarea className={`${fieldClass} min-h-24 resize-y`} name="message" placeholder="Your event, guest count and the problem you need to solve..." required />
       </label>
       <button type="submit" className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-berry px-6 py-4 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-wine sm:w-auto">
@@ -119,7 +119,7 @@ export default function HomePage() {
               Building Digital Solutions For <span className="block italic text-berry sm:inline">Every Event.</span>
             </motion.h1>
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.48, duration: 0.6 }} className="mt-7 max-w-xl text-sm leading-7 text-ink/65 sm:text-base">
-              TESOL delivers innovative digital solutions that bring together design and technology to create seamless, memorable event experiences.
+              <strong className="font-bold text-ink">TESOL</strong> delivers innovative digital solutions that bring together design and technology to create seamless, memorable event experiences.
             </motion.p>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.58, duration: 0.6 }} className="mt-8 flex flex-wrap gap-3">
               <a href="#inquire" className="inline-flex items-center gap-2 rounded-full bg-berry px-6 py-4 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-wine">
@@ -149,10 +149,10 @@ export default function HomePage() {
       </section>
 
       <section className="bg-cream py-24 lg:py-32">
-        <div className="page-shell grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
+        <div className="page-shell grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
           <motion.div {...reveal}>
             <p className="eyebrow text-berry">The big idea</p>
-            <h2 className="display-title mt-6 text-[clamp(1.125rem,5.6vw,1.5rem)] text-ink sm:text-5xl"><span className="whitespace-nowrap sm:whitespace-normal">Behind every great event is <span className="italic text-wine">a lot of</span></span>{' '}<span className="block italic text-wine sm:inline">moving parts.</span></h2>
+            <h2 className="display-title mt-6 text-[clamp(1.2rem,5.8vw,1.5625rem)] text-ink sm:text-5xl"><span className="whitespace-nowrap sm:whitespace-normal">Behind every great event is <span className="italic text-wine">a lot of</span></span>{' '}<span className="block italic text-wine sm:inline">moving parts.</span></h2>
           </motion.div>
 
           <motion.div {...reveal}>
@@ -169,19 +169,19 @@ export default function HomePage() {
 
       <section className="bg-parchment py-24 lg:py-32">
         <div className="page-shell">
-          <motion.div {...reveal} className="grid gap-7 border-b border-wine/25 pb-12 lg:grid-cols-[0.65fr_1.35fr] lg:items-end">
+          <motion.div {...reveal} className="grid gap-6 border-b border-wine/25 pb-6 lg:grid-cols-[0.65fr_1.35fr] lg:items-end">
             <p className="eyebrow text-berry">What TESOL builds</p>
-            <h2 className="display-title text-[clamp(1.5rem,6.5vw,1.75rem)] text-ink sm:text-5xl">One event. <span className="block italic text-wine sm:inline">A lot of possibilities.</span></h2>
+            <h2 className="display-title text-[clamp(1.625rem,7vw,1.875rem)] text-ink sm:text-5xl">One event. <span className="block italic text-wine sm:inline">A lot of possibilities.</span></h2>
           </motion.div>
 
-          <div className="mt-8 grid gap-5 lg:auto-rows-fr lg:grid-cols-2">
+          <div className="mt-6 grid gap-5 lg:auto-rows-fr lg:grid-cols-2">
             {solutions.map((solution, index) => {
               const Icon = solution.icon
               return (
                 <motion.article key={solution.title} {...reveal} transition={{ ...reveal.transition, delay: (index % 2) * 0.08 }} className={`group flex h-full min-h-[390px] flex-col rounded-[2rem] border border-wine/15 bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(98,54,97,0.1)] sm:p-9 ${index === solutions.length - 1 ? 'lg:col-span-2 lg:min-h-[280px] lg:flex-row lg:items-center lg:gap-14' : ''}`}>
                   <div className="flex items-center justify-between lg:min-w-40">
                     <span className="font-mono text-xs text-plum/55">{solution.number}</span>
-                    <span className={`grid size-11 place-items-center ${index < 4 ? 'text-berry' : 'rounded-full bg-berry text-ink'}`}><Icon size={19} /></span>
+                    <span className="grid size-11 place-items-center text-berry"><Icon size={19} /></span>
                   </div>
                   <div className={index === solutions.length - 1 ? 'mt-8 lg:mt-0' : 'mt-10 flex flex-1 flex-col'}>
                     <h3 className="font-display text-2xl text-ink sm:text-3xl">{solution.title}</h3>
@@ -198,7 +198,7 @@ export default function HomePage() {
       <section className="noise overflow-hidden bg-blush py-24 text-ink lg:py-32">
         <div className="page-shell relative z-10">
           <motion.div {...reveal} className="grid items-center gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
-            <h2 className="display-title text-center text-[clamp(1.5rem,6.5vw,1.75rem)] sm:text-5xl">A calm process for a <span className="italic text-berry">remarkable</span> event.</h2>
+            <h2 className="display-title text-center text-[clamp(1.625rem,7vw,1.875rem)] sm:text-5xl">A calm process for a <span className="italic text-berry">remarkable</span> event.</h2>
             <blockquote className="rounded-[2rem] border border-berry/20 bg-white/65 p-8 text-center shadow-[0_24px_70px_rgba(98,54,97,0.08)] sm:p-12">
               <p className="mx-auto max-w-4xl font-display text-2xl leading-[1.35] text-ink sm:text-3xl">“They understood the soul of our celebration, then made every moving part feel entirely effortless.”</p>
               <footer className="mt-8 font-mono text-xs uppercase tracking-[0.16em] text-ink/50">Nnenna &amp; Ade · Ikoyi, Lagos</footer>
@@ -210,7 +210,7 @@ export default function HomePage() {
       <section id="inquire" className="scroll-mt-20 bg-parchment py-24 lg:py-32">
         <div className="page-shell grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
           <motion.div {...reveal}>
-            <h2 className="display-title text-xl text-ink sm:text-5xl">Tell us about your events</h2>
+            <h2 className="display-title text-2xl text-ink sm:text-5xl">Tell us about your events.</h2>
           </motion.div>
           <motion.div {...reveal}><InquiryForm /></motion.div>
         </div>
