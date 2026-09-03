@@ -130,7 +130,9 @@ export default function HomePage() {
 
           <motion.div initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }} className="relative lg:ml-4">
             <div className="noise h-[520px] overflow-hidden rounded-[2rem_2rem_8rem_2rem] sm:h-[620px]">
-              <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1400&q=88" alt="A beautifully produced event space" className="image-cover" />
+              <video autoPlay loop muted playsInline preload="metadata" poster="/hero-event-poster.jpg" className="image-cover" aria-label="A beautifully produced event experience">
+                <source src="/hero-event.mp4" type="video/mp4" />
+              </video>
               <div className="absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
             </div>
           </motion.div>
@@ -198,7 +200,7 @@ export default function HomePage() {
       <section className="noise overflow-hidden bg-blush py-24 text-ink lg:py-32">
         <div className="page-shell relative z-10">
           <motion.div {...reveal} className="grid items-center gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
-            <h2 className="display-title text-center text-[clamp(1.625rem,7vw,1.875rem)] sm:text-5xl">A calm process for a <span className="italic text-berry">remarkable</span> event.</h2>
+            <h2 className="display-title text-center text-[clamp(1.625rem,7vw,1.875rem)] sm:text-5xl">A calm process for a <span className="block sm:inline"><span className="italic text-berry">remarkable</span> event.</span></h2>
             <blockquote className="rounded-[2rem] border border-berry/20 bg-white/65 p-8 text-center shadow-[0_24px_70px_rgba(98,54,97,0.08)] sm:p-12">
               <p className="mx-auto max-w-4xl font-display text-2xl leading-[1.35] text-ink sm:text-3xl">“They understood the soul of our celebration, then made every moving part feel entirely effortless.”</p>
               <footer className="mt-8 font-mono text-xs uppercase tracking-[0.16em] text-ink/50">Nnenna &amp; Ade · Ikoyi, Lagos</footer>
