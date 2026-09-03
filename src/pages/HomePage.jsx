@@ -185,7 +185,10 @@ export default function HomePage() {
 
           <motion.div initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }} className="relative lg:ml-4">
             <div className="noise h-[520px] overflow-hidden rounded-[2rem_2rem_8rem_2rem] sm:h-[620px]">
-              <video ref={heroVideoRef} src="/hero-event-16s.mov" autoPlay loop muted playsInline preload="auto" controls={false} disablePictureInPicture disableRemotePlayback className="hero-video image-cover" aria-label="A beautifully produced event experience" tabIndex={-1} style={{ visibility: 'hidden' }} />
+              <video ref={heroVideoRef} autoPlay loop muted playsInline preload="auto" controls={false} disablePictureInPicture disableRemotePlayback className="hero-video image-cover" aria-label="A beautifully produced event experience" tabIndex={-1} style={{ visibility: 'hidden' }}>
+                <source src="/hero-event-16s.mp4" type="video/mp4" />
+                <source src="/hero-event-16s.mov" type="video/quicktime" />
+              </video>
               <div className="absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
             </div>
           </motion.div>
