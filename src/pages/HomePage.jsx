@@ -109,7 +109,6 @@ function InquiryForm() {
 
 export default function HomePage() {
   const heroVideoRef = useRef(null)
-  const [useAnimatedHero] = useState(() => window.matchMedia('(max-width: 639px)').matches)
 
   useEffect(() => {
     const video = heroVideoRef.current
@@ -127,17 +126,29 @@ export default function HomePage() {
       if (document.visibilityState === 'visible') startVideo()
     }
 
+    const observer = 'IntersectionObserver' in window
+      ? new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) startVideo()
+      }, { threshold: 0.1 })
+      : null
+
+    observer?.observe(video)
     startVideo()
     video.addEventListener('loadedmetadata', startVideo)
     video.addEventListener('loadeddata', startVideo)
     video.addEventListener('canplay', startVideo)
     document.addEventListener('visibilitychange', restartWhenVisible)
+    document.addEventListener('touchstart', startVideo, { passive: true, once: true })
+    window.addEventListener('pageshow', startVideo)
 
     return () => {
+      observer?.disconnect()
       video.removeEventListener('loadedmetadata', startVideo)
       video.removeEventListener('loadeddata', startVideo)
       video.removeEventListener('canplay', startVideo)
       document.removeEventListener('visibilitychange', restartWhenVisible)
+      document.removeEventListener('touchstart', startVideo)
+      window.removeEventListener('pageshow', startVideo)
     }
   }, [])
 
@@ -163,11 +174,7 @@ export default function HomePage() {
 
           <motion.div initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }} className="relative lg:ml-4">
             <div className="noise h-[520px] overflow-hidden rounded-[2rem_2rem_8rem_2rem] sm:h-[620px]">
-              {useAnimatedHero ? (
-                <img src="/hero-event-mobile-v4.gif" alt="A beautifully produced event experience" className="image-cover" />
-              ) : (
-                <video ref={heroVideoRef} src="/hero-event-desktop-v3.mp4" autoPlay loop muted playsInline preload="auto" controls={false} disablePictureInPicture disableRemotePlayback className="hero-video image-cover" aria-label="A beautifully produced event experience" tabIndex={-1} />
-              )}
+              <video ref={heroVideoRef} src="/hero-event-720p-10s-v8.mp4" autoPlay loop muted playsInline preload="auto" controls={false} disablePictureInPicture disableRemotePlayback className="hero-video image-cover" aria-label="A beautifully produced event experience" tabIndex={-1} />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
             </div>
           </motion.div>
