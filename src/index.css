@@ -99,7 +99,7 @@ img {
   height: 2.85rem;
   flex: 0 0 auto;
   overflow: hidden;
-  background: #000;
+  background: transparent;
 }
 
 .brand-logo-crop img {
