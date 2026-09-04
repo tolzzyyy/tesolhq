@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowUpRight, Menu, X } from 'lucide-react'
+import { ArrowUp, ArrowUpRight, Menu, X } from 'lucide-react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 
 function BrandMark() {
@@ -146,6 +146,44 @@ function Footer() {
   )
 }
 
+function BackToTopButton() {
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const updateVisibility = () => setVisible(window.scrollY > 420)
+
+    updateVisibility()
+    window.addEventListener('scroll', updateVisibility, { passive: true })
+    return () => window.removeEventListener('scroll', updateVisibility)
+  }, [])
+
+  const scrollToTop = () => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    window.scrollTo({ top: 0, left: 0, behavior: reduceMotion ? 'auto' : 'smooth' })
+  }
+
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.button
+          type="button"
+          initial={{ opacity: 0, scale: 0.82, y: 10 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.82, y: 10 }}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.94 }}
+          onClick={scrollToTop}
+          className="fixed right-4 z-40 grid size-12 place-items-center rounded-full bg-wine text-white shadow-[0_12px_35px_rgba(98,54,97,0.3)] transition-colors hover:bg-plum focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-wine md:right-6"
+          style={{ bottom: 'calc(env(safe-area-inset-bottom, 0px) + 1rem)' }}
+          aria-label="Back to top"
+        >
+          <ArrowUp size={20} strokeWidth={2} aria-hidden="true" />
+        </motion.button>
+      )}
+    </AnimatePresence>
+  )
+}
+
 export default function Layout() {
   const location = useLocation()
 
@@ -164,6 +202,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <BackToTopButton />
     </div>
   )
 }
