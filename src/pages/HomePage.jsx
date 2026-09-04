@@ -209,7 +209,10 @@ export default function HomePage() {
         <div className="page-shell grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
           <motion.div {...reveal}>
             <p className="eyebrow text-berry">The big idea</p>
-            <h2 className="display-title mt-6 text-[clamp(1.2rem,5.8vw,1.5625rem)] text-ink sm:text-5xl"><span className="whitespace-nowrap sm:whitespace-normal">Behind every great event is <span className="italic text-wine">a lot of</span></span>{' '}<span className="block italic text-wine sm:inline">moving parts.</span></h2>
+            <h2 className="display-title mt-6 text-[clamp(1.2rem,5.8vw,1.5625rem)] text-ink sm:text-5xl">
+              Behind every great event is{' '}
+              <span className="block italic text-wine sm:inline">a lot of moving parts.</span>
+            </h2>
           </motion.div>
 
           <motion.div {...reveal}>
